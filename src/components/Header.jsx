@@ -28,9 +28,9 @@ const Header = () => {
             <li>
               <NavLink to="/register">Register</NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink to="/orders">Orders</NavLink>
-            </li> */}
+            </li>
           </ul>
           {user && (
             <>
