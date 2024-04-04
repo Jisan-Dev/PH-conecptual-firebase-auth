@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../AuthProvider';
 
 const Login = () => {
   const [isPassVisible, setIsPassVisible] = useState(false);
+
+  const { loginUser } = useContext(AuthContext);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
+
+    loginUser(email, password)
+      .then((result) => console.log(result.user))
+      .catch((error) => console.log(error));
   };
 
   return (
